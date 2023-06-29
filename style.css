@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body  {
+  font-family: 'Belanosima', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color:#010101;
+}
+
+h1  {
+  color: white;
+  font-size: 2.5rem;
+  font-family: Belanosima;
+}
+
+.navbar {
+  background-color: #010101 !important;
+}
+
+.navbar a {
+  color: white !important;
+}
+
+.bi {
+  color: white;
+  font-size: 30px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(imgs/hero_salvaCash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  width: auto;
+}
+
+.buscador1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 10rem;
+  box-shadow: 0 0 80px 10px rgb(255,255,255,0.8);
+  background-color: rgb(255,255,255,0.35);
+  border-radius: 15px;
+}
+
+.buscador2  {
+  display: flex;
+  flex-direction: column;
+  /*justify-content:;*/
+  align-items: center;
+}
+
+.card {
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+
+.bi {
+ transition: ease 500ms;
+ background-color: transparent; 
+}
+
+button  {
+  background: transparent;
+  border: 0;
+}
+/* .botonCard  {
+  background-color: black;
+}
+ */

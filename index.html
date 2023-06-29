@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Roboto:wght@300;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Icons BootStrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!--BootStrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <title>Entrega 3</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="bi bi-list"></i></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Descuentos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="text-center">Descuentos!!</h1>
+      <div class="hero">
+        <div class="buscador1 mb-5">
+           <h2>Qué querés comprar?</h2>
+           <div class="buscador2">
+           
+            
+            <!-- <div class="dropdown">
+              <button class="btn bg-dark text-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="botonDesplegable">
+                Elegí la forma de buscar
+              </button>
+              <ul class="dropdown-menu">
+                <li><a id="buscarMedioPago" class="dropdown-item" href="#">Por Medio de Pago</a></li>
+                <li><a id="buscarCategoria" class="dropdown-item" href="#">Por Categoría</a></li>
+                <li><a id="buscarTienda" class="dropdown-item" href="#">Por Tienda</a></li>
+              </ul>
+            </div> -->
+            <form>
+              <select id="menuPrincipal">
+                <option value="">Selecciona una opción para buscar</option>
+                <option value="opcion1">Por medio de pago</option>
+                <option value="opcion2">Por categoría</option>
+                <option value="opcion2">Por tienda</option>
+              </select>
+              <select id="menuSecundario">
+                <option value="">Selecciona una opción</option>
+              </select>
+            </form>
+
+            <input id="consulta" type="text">
+          </div>
+          
+        </div>
+        <!--Newsletter-->
+        <div class="newsletter mt-5">
+          <h3 class="text-center">¿Querés que te informe los mejores descuentos?</h3>
+          <form id="formulario">
+            <label for="name">
+              Nombre Completo
+              <input type="text" name="name" id="name" placeholder="Juan Pérez" />
+            </label>
+            <label for="email">
+              Correo electrónico
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="juanperez@juanperez.com.ar"
+              />
+            </label>
+            <input id="submit" type="submit" value="enviar" class="btn btn-light" />
+          </form>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <h3 class="text-center text-light">Los mejores descuentos</h3>
+        <div id="mejoresDescuentos" class="row justify-content-center">
+               <!-- renderización de descuentos -->
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Consultá tu lista de favoritos <i class="bi bi-heart-fill"></i>
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!--Lista de Favoritos-->  
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Comercio</th>
+                      <th scope="col">Descuento</th>
+                      <th scope="col">Medio de Pago</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tablaLista">
+                  <!--Lista de Favoritos agregados-->      
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <!-- <button type="button" class="btn btn-primary">Entendido</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </main>
+    <script src="arrayDescuentos.js"></script>
+    <script src="main.js"></script>
+    <!--BootStrap-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
