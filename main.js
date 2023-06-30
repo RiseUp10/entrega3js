@@ -46,22 +46,30 @@ buscarTienda.onclick = () => {console.log("Prueba3")} */
       console.log('caca3')
   }
 } */
-/* let menuPrincipal = document.getElementById("menuPrincipal");
+let menuPrincipal = document.getElementById("menuPrincipal");
 let menuSecundario = document.getElementById("menuSecundario");
-let tipoBusqueda = menuPrincipal.value;
+let resultado = [];
 
 menuPrincipal.onclick = () => {  
   
-  //menuSecundario.innerHTML += "";
-
-  if(tipoBusqueda == 'Por medio de pago'){
-    console.log('caca1');
-  }else if(tipoBusqueda == 'Por categoría'){
-    console.log('caca2');
-  }else if(tipoBusqueda == 'Por tienda'){
-    console.log('caca3')
+  /* if(menuPrincipal.value === 'medioPago'){
+    buscarResultados();
+    
+  }else if(menuPrincipal.value === 'categoria'){
+    
+    buscarResultados();
+  }else if(menuPrincipal.value === 'generador'){
+    
+    buscarResultados(resultado);
   }
-} */
+}
+  
+function buscarResultados(opciones) { */
+  let opciones = menuPrincipal.value;
+  const listaResultados = descuentos.map((descuento) => {descuento.opciones})
+  console.log(listaResultados);
+}
+
 
 let mejoresDescuentos = document.getElementById('mejoresDescuentos');
 let tablaLista = document.getElementById('tablaLista');
