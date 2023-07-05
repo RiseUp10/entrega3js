@@ -68,41 +68,42 @@ function renderizarDescuentos(listaDescuentos){
           <p class="card-text">${descuento.tipoBeneficio} ${descuento.porcentajeDescuento}%</p>
           <p class="card-text">Guardá este descuento</p>
           <button id=${descuento.id} class='botonCorazon'><i class="bi bi-heart"></i></button>
+          <button id=${descuento.id} class='botonBasura'><i class="bi bi-trash3"></i></button>  
         </div>
       </div>
     `;
-  }}
+
+    let botonesCorazon = document.getElementsByClassName('botonCorazon');
+      
+    for(const botonCorazon of botonesCorazon) {
+      botonCorazon.onclick = () =>{
+        
+        if(botonCorazon.innerHTML == '<i class="bi bi-heart"></i>'){
+        alert('El descuento '+botonCorazon.id+' se está agregando a tu lista de favoritos');
+        botonCorazon.innerHTML = '<i class="bi bi-heart-fill">';
+        const armadoLista = descuentos.find((descuento) => botonCorazon.id == descuento.id);
+        
+        agregarListaFavoritos(armadoLista);
+      }else{
+        alert('Este descuento será quitado de tu lista de Favoritos');
+        botonCorazon.innerHTML = '<i class="bi bi-heart"></i>'
+        const desarmadoLista = descuentos.find((descuento) => botonCorazon.id == descuento.id);
+        const indexDesarmado = indexOf(desarmadoLista);
+        console.log(indexDesarmado);
+
+        removerListaFavoritos(desarmadoLista);
+      }  
+
+      }
+  }}}
 //TODOS LOS DESCUENTOS - Fin
+
   
+
 //FAVORITOS - Inicio
 let btnFavoritos = document.getElementById('btnFavoritos');
 
-btnFavoritos.addEventListener('click',()=>{
-  let listaFavoritos = JSON.parse(localStorage.getItem('listaFavoritos'));
-  let botonesCorazon = document.getElementsByClassName('botonCorazon');
   
-  for(const 
-    botonCorazon.onclick = () =>{
-        
-      alert('El descuento '+botonCorazon.id+' se está agregando a tu lista de favoritos');
-      botonCorazon.innerHTML = '<i class="bi bi-heart-fill">';
-      const armadoLista = descuentos.find((descuento) => botonCorazon.id == descuento.id);
-      
-      agregarListaFavoritos(armadoLista);
-    }  
-
-    botonCorazon.onmouseover = () => {
-      botonCorazon.innerHTML = '<i class="bi bi-heart-fill">';
-    }
-
-    botonCorazon.addEventListener('mouseout',()=>{
-      botonCorazon.innerHTML = '<i class="bi bi-heart">';
-    })  
-  )}
-)
-
-
-    
 function agregarListaFavoritos (favorito) {
   listaFavoritos.push(favorito);
   //Almacena# de la lista de favoritos
@@ -117,6 +118,24 @@ function agregarListaFavoritos (favorito) {
                           </tr>
   `;
 }
+
+function removerListaFavoritos (noFavorito) {
+  listaFavoritos.pop(noFavorito);
+  console.log(listaFavoritos);
+
+  for(const lista of listaFavoritos)  {
+    
+    tablaLista.innerHTML =`
+                          <tr>
+                            <th scope="row">${lista.id}</th>
+                              <td>${lista.generador}</td>
+                              <td>${lista.porcentajeDescuento}%</td>
+                              <td>${lista.medioPago1}</td>
+                          </tr>
+    `;
+  }
+}
+
 /* console.log('Verificacion'+ (localStorage.getItem('Lista de Favoritos')))
 console.log(listaFavoritos) */
 //FAVORITOS - Fin

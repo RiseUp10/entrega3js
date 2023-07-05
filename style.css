@@ -16,6 +16,11 @@ h1  {
   font-family: Belanosima;
 }
 
+h3  {
+  color: white;
+  
+}
+
 .navbar {
   background-color: #010101 !important;
 }
@@ -60,6 +65,11 @@ h1  {
   align-items: center;
 }
 
+/* .resultados {
+  width: 100%;
+  height: auto;
+} */
+
 .card {
   margin: 10px;
   padding: 10px;
@@ -77,7 +87,9 @@ button  {
   background: transparent;
   border: 0;
 }
-/* .botonCard  {
-  background-color: black;
+
+.botonBasura  {
+  color: black;
+  border: 2px solid black;
 }
  */
